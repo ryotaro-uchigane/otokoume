@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
+  resources :users
 
-  get 'users/:id' => 'users#show'
-
-  get 'graphs/index'
-  get 'graphs/draw', to: 'graphs#draw'
+  get 'graphs', to: "graphs#index"
 
   resources :progresses
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

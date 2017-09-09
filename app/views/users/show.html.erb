@@ -1,7 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Users show</h1>
 
 <p>User</p>
+
+<p><%= link_to 'Users Index', users_path %> | <%= link_to 'User Edit', edit_user_path %> | <%= link_to '統計ページ', graphs_path %></p>
 
 <ul>
   <li>Name:  <%= @user.name %></li>
@@ -14,7 +15,7 @@
 <p>Progress</p>
 <% @progresses.each do |progress|%>
   <ul>
-    <li>Company name:        <%= progress.company_name %></li>
+    <li>Company Name:        <%= link_to progress.company_name, progress_path(progress.id) %></li>
     <li>Business Category:   <%= progress.business_category %></li>
     <li>Occupation Category: <%= progress.occupation_category %></li>
     <li>Status:              <%= progress.status %></li>

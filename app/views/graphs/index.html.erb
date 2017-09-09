@@ -1,2 +1,36 @@
-<h1>Graphs#index</h1>
-<p>Find me in app/views/graphs/index.html.erb</p>
+<script>
+
+  function change_graph() {
+    var bus_cat = document.getElementById("business").value
+    var job_cat = document.getElementById("occupation").value
+
+    if (bus_cat == "-1") {
+      alert("業種を選択してください")
+    }
+    else if(job_cat == "-1") {
+      alert("業種を選択してください")
+    }
+    else {
+      document.location.href = "?bus=" + bus_cat + "&job=" + job_cat;
+    }
+  }
+</script>
+<h1>statistics</h1>
+<p><%= link_to 'Users Index', users_path %></p>
+
+<select id="business">
+  <option value="-1" selected>--業種を選択--</option>
+  <option value="0">IT企業</option>
+</select>
+<select id="occupation">
+  <option value="-1" selected>--職種を選択--</option>
+  <option value="0">エンジニア</option>
+  <option value="1">総合職</option>
+</select>
+<button type="submit" onClick="change_graph()">OK!</button>
+<p>選考中</p>
+<%= column_chart @chart_data0 %>
+<p>内定！</p>
+<%= column_chart @chart_data1 %>
+<p>おちた</p>
+<%= column_chart @chart_data2 %>
