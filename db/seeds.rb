@@ -22,7 +22,7 @@ Faker::Config.locale = :ja
 end
 
 
-1000.times do
+2000.times do
   Progress.create(
       # name: Forgery(:name).full_name,
       user_id: Faker::Number.between(0, User.count),
@@ -31,6 +31,6 @@ end
       occupation_category: [0,1].sample,
       status: Faker::Number.between(0, 2),
       body: Faker::Lorem.sentence,
-      date: Faker::Date.between(2.days.ago, Date.today),
+      date: Faker::Date.between(6.month.ago, Date.today),
   )
 end
