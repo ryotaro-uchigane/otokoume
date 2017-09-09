@@ -17,17 +17,19 @@
 </script>
 <h1>statistics</h1>
 <p><%= link_to 'Users Index', users_path %></p>
+<div class="form-inline">
+  <select id="business" class="form-control">
+    <option value="-1" selected>--業種を選択--</option>
+    <option value="0">IT企業</option>
+  </select>
+  <select id="occupation" class="form-control">
+    <option value="-1" selected>--職種を選択--</option>
+    <option value="0">エンジニア</option>
+    <option value="1">総合職</option>
+  </select>
+  <button type="submit" onClick="change_graph()" class="btn btn-success">OK!</button>
+</div>
 
-<select id="business">
-  <option value="-1" selected>--業種を選択--</option>
-  <option value="0">IT企業</option>
-</select>
-<select id="occupation">
-  <option value="-1" selected>--職種を選択--</option>
-  <option value="0">エンジニア</option>
-  <option value="1">総合職</option>
-</select>
-<button type="submit" onClick="change_graph()">OK!</button>
 <p>選考中</p>
 <%= area_chart @chart_data0 %>
 <p>内定！</p>
