@@ -5,7 +5,7 @@
   </div>
   <div class="field">
     <%= f.label :sex %>
-    <%= f.text_field :sex %>
+    <%= select_tag :sex, options_for_select({"男性" => "male", "女性" => "female"}) %>
   </div>
   <div class="field">
     <%= f.label :age %>
@@ -13,6 +13,8 @@
   </div>
   <div class="field">
     <%= f.label :univ %>
+
+    <%= select_tag :sex, options_for_select({"University_of_Oxford" => "0","California_Institute_of_Technology" => "1","Stanford_University" => "2","University_of_Cambridge" => "3","Harvard_University:" => "4",}) %>
     <%= f.text_field :univ %>
   </div>
   <div class="field">
