@@ -1,7 +1,7 @@
 class Progress < ApplicationRecord
   belongs_to :user
   enum business_category: {
-      it: 0,
+      IT: 0,
   }
   enum occupation_category: {
       programer: 0,
