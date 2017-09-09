@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'users/index'
 
-  get 'users/:id' => 'users#show'
+  get 'users/:id', to: 'users#show'
+  get 'users/:id/edit', to: 'users#edit'
+  patch 'users/:id', to: 'users#update'
 
   get 'graphs/index'
   get 'graphs/draw', to: 'graphs#draw'

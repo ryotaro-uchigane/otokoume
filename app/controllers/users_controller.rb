@@ -7,4 +7,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @progresses = Progress.where(user_id: params[:id])
   end
+
+  def create
+    @user = User.new(user_params)
+  end
+
+  def edit
+    @user = User
+  end
+
+  def update
+    @user = User.find(params[:id])
+  end
 end
