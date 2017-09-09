@@ -2,4 +2,6 @@
 
 <%= render partial: 'form' %>
 
-<p><%= link_to 'Users Index', users_path %> | <%= link_to 'User', user_path %> | <%= link_to '統計ページ', graphs_path %></p>
+<%= link_to 'Users Index', users_path, :class=>'btn btn-warning' %>
+<%= link_to 'User', user_path, :class=>'btn btn-info' %>
+<%= link_to '統計ページ', graphs_path, :class=>'btn btn-primary' %>

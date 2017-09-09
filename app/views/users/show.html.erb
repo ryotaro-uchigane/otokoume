@@ -2,7 +2,9 @@
 
 <p>User</p>
 
-<p><%= link_to 'Users Index', users_path %> | <%= link_to 'User Edit', edit_user_path %> | <%= link_to '統計ページ', graphs_path %></p>
+<%= link_to 'Users Index', users_path, :class=>'btn btn-info'%>
+<%= link_to 'User Edit', edit_user_path, :class=>'btn btn-success'%>
+<%= link_to '統計ページ', graphs_path, :class=>'btn btn-primary'%>
 
 <ul>
   <li>Name:  <%= @user.name %></li>
