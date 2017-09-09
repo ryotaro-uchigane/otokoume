@@ -23,17 +23,17 @@
 
   <div class="field">
     <%= form.label :business_category %>
-    <%= form.number_field :business_category, id: :progress_business_category %>
+    <%= form.select :business_category, Progress.business_categories.keys.to_a, {} %>
   </div>
 
   <div class="field">
     <%= form.label :occupation_category %>
-    <%= form.number_field :occupation_category, id: :progress_occupation_category %>
+    <%= form.select :occupation_category, Progress.occupation_categories.keys.to_a, {} %>
   </div>
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.number_field :status, id: :progress_status %>
+    <%= form.select :status, Progress.statuses.keys.to_a, {} %>
   </div>
 
   <div class="actions">

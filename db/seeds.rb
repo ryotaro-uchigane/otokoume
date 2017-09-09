@@ -8,6 +8,14 @@
 require 'faker'
 require 'forgery'
 
+company_names = [
+    'Company1',
+    'Company2',
+    'Company3',
+    'Company4',
+    'Company5',
+]
+
 Faker::Config.locale = :ja
 
 
@@ -26,7 +34,7 @@ end
   Progress.create(
       # name: Forgery(:name).full_name,
       user_id: Faker::Number.between(0, User.count),
-      company_name: Faker::Company.name,
+      company_name: company_names.sample(),
       business_category: 0,
       occupation_category: [0,1].sample,
       status: Faker::Number.between(0, 2),
