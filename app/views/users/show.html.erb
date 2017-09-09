@@ -12,12 +12,24 @@
   <li>Grade: <%= @user.grade %></li>
 </ul>
 
-<p>Progress</p>
-<% @progresses.each do |progress|%>
-  <ul>
-    <li>Company Name:        <%= link_to progress.company_name, progress_path(progress.id) %></li>
-    <li>Business Category:   <%= progress.business_category %></li>
-    <li>Occupation Category: <%= progress.occupation_category %></li>
-    <li>Status:              <%= progress.status %></li>
-  </ul>
-<% end %>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-default">
+  <tr>
+    <th>Company Name</th>
+    <th>Business Category</th>
+    <th>Occupation Category</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @progresses.each do |progress| %>
+      <tr>
+        <td><%= link_to progress.company_name, progress_path(progress.id) %></td>
+        <td><%= progress.business_category %></td>
+        <td><%= progress.occupation_category %></td>
+        <td><%= progress.status %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
