@@ -1,8 +1,22 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
-<p>Name:  <%= @user.name %></p>
-<p>Sex:   <%= @user.sex %></p>
-<p>Age:   <%= @user.age %></p>
-<p>Univ:  <%= @user.univ %></p>
-<p>Grade: <%= @user.grade %></p>
+<p>User</p>
+
+<ul>
+  <li>Name:  <%= @user.name %></li>
+  <li>Sex:   <%= @user.sex %></li>
+  <li>Age:   <%= @user.age %></li>
+  <li>Univ:  <%= @user.univ %></li>
+  <li>Grade: <%= @user.grade %></li>
+</ul>
+
+<p>Progress</p>
+<% @progresses.each do |progress|%>
+  <ul>
+    <li>Company name:        <%= progress.company_name %></li>
+    <li>Business Category:   <%= progress.business_category %></li>
+    <li>Occupation Category: <%= progress.occupation_category %></li>
+    <li>Status:              <%= progress.status %></li>
+  </ul>
+<% end %>
