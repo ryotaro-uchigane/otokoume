@@ -1,7 +1,5 @@
 class GraphsController < ApplicationController
   def index
-  end
-  def draw
     if params[:bus].blank? and params[:job].blank?
       @chart_data0 = Progress.order('date ASC').where("status = 0").group(:date).count
     else
