@@ -29,8 +29,8 @@
 </select>
 <button type="submit" onClick="change_graph()">OK!</button>
 <p>選考中</p>
-<%= column_chart @chart_data0 %>
+<%= area_chart @chart_data0 %>
 <p>内定！</p>
-<%= column_chart @chart_data1 %>
+<%= area_chart @chart_data1 ,colors: ["pink", "#999"] %>
 <p>おちた</p>
-<%= column_chart @chart_data2 %>
+<%= area_chart @chart_data2 ,colors: ["black", "#000"] %>
