@@ -25,8 +25,7 @@
   <%= @progress.status %>
 </p>
 
-<%= link_to 'Edit', edit_progress_path(@progress) %> |
-<%= link_to 'Back', user_path %>
+<%= link_to 'Back', user_path(@progress.user_id), :class=>'btn btn-primary'%>
 
 <p>選考中</p>
 <%= area_chart @chart_data0 %>
