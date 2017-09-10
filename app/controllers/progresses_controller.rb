@@ -14,7 +14,7 @@ class ProgressesController < ApplicationController
     @chart_data1 = make_chart_data(@progress.company_name,1)
     @chart_data2 = make_chart_data(@progress.company_name,2)
   end
-  
+
   def make_chart_data(company, stat)
       raw_data = Progress.where("company_name = \"#{company}\"").order('date ASC').where("status = #{stat}").group(:date).count
     for d in raw_data.keys[0]..raw_data.keys[-1] do
@@ -27,7 +27,7 @@ class ProgressesController < ApplicationController
   # GET /progresses/new
   def new
     @progress = Progress.new
-    @progress.user_id = params[:user_id]    if !params[:user].blank?
+    @progress.user_id = params[:user_id]    if !params[:user_id].blank?
 
   end
 
