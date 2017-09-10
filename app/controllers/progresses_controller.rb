@@ -10,10 +10,18 @@ class ProgressesController < ApplicationController
   # GET /progresses/1
   # GET /progresses/1.json
   def show
+    @chart_data0 = make_chart_data(@progress.company_name,0)
+    @chart_data1 = make_chart_data(@progress.company_name,1)
+    @chart_data2 = make_chart_data(@progress.company_name,2)
+  end
+  
+  def make_chart_data(company, stat)
+      raw_data = Progress.where("company_name = \"#{company}\"").order('date ASC').where("status = #{stat}").group(:date).count
+    for d in raw_data.keys[0]..raw_data.keys[-1] do
+      raw_data[d] = 0 if raw_data[d].blank?
+    end
 
-    @chart_data0 = Progress.where("company_name = \"#{@progress.company_name}\"").order('date ASC').where("status = 0").group(:date).count
-    @chart_data1 = Progress.where("company_name = \"#{@progress.company_name}\"").order('date ASC').where("status = 1").group(:date).count
-    @chart_data2 = Progress.where("company_name = \"#{@progress.company_name}\"").order('date ASC').where("status = 2").group(:date).count
+    raw_data
   end
 
   # GET /progresses/new

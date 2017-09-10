@@ -1,23 +1,21 @@
 class GraphsController < ApplicationController
   def index
-    if params[:bus].blank? and params[:job].blank?
-      @chart_data0 = Progress.order('date ASC').where("status = 0").group(:date).count
+    @chart_data0 = make_chart_data(params[:bus], params[:job], 0)
+    @chart_data1 = make_chart_data(params[:bus], params[:job], 1)
+    @chart_data2 = make_chart_data(params[:bus], params[:job], 2)
+  end
+
+  def make_chart_data(bus, job, stat)
+    if bus.blank? && job.blank?
+      raw_data = Progress.order('date ASC').where("status = #{stat}").group(:date).count
     else
-      @chart_data0 = Progress.order('date ASC').where("status = 0 and business_category = #{params[:bus]} and occupation_category = #{params[:job]}").group(:date).count
+      raw_data = Progress.order('date ASC').where("status = #{stat} and business_category = #{params[:bus]} and occupation_category = #{params[:job]}").group(:date).count
     end
 
-    if params[:bus].blank? and params[:job].blank?
-      @chart_data1 = Progress.order('date ASC').where("status = 1").group(:date).count
-    else
-      @chart_data1 = Progress.order('date ASC').where("status = 1 and business_category = #{params[:bus]} and occupation_category = #{params[:job]}").group(:date).count
+    for d in raw_data.keys[0]..raw_data.keys[-1] do
+      raw_data[d] = 0 if raw_data[d].blank?
     end
 
-    if params[:bus].blank? and params[:job].blank?
-      @chart_data2 = Progress.order('date ASC').where("status = 2").group(:date).count
-    else
-      @chart_data2 = Progress.order('date ASC').where("status = 2 and business_category = #{params[:bus]} and occupation_category = #{params[:job]}").group(:date).count
-    end
-
-
+    raw_data
   end
 end
