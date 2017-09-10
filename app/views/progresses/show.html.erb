@@ -1,35 +1,23 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @progress.user_id %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @progress.company_name %>
-</p>
-
-<p>
-  <strong>Business category:</strong>
-  <%= @progress.business_category %>
-</p>
-
-<p>
-  <strong>Occupation category:</strong>
-  <%= @progress.occupation_category %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @progress.status %>
-</p>
-
-<%= link_to 'Back', user_path(@progress.user_id), :class=>'btn btn-primary'%>
-
+<div class="container">
+<div class="top-menu raw">
+<%= link_to 'ユーザーページに戻る', user_path(@progress.user_id), :class=>'btn btn-primary'%>
+</div>
+<h2>選考状況</h2>
+<ul class="company-data list-group">
+  <li class="list-group-item">User:  <%= @progress.user_id %></li>
+  <li class="list-group-item">Company Name:   <%= @progress.company_name %></li>
+  <li class="list-group-item">Business Category:   <%= @progress.business_category %></li>
+  <li class="list-group-item">Occupational Category:  <%= @progress.occupation_category %></li>
+  <li class="list-group-item">Status: <%= @progress.status %></li>
+</ul>
+<h2><%= @progress.company_name %>の選考状況<h2>
+<div class="graph-outer center-block panel">
 <p>選考中</p>
 <%= area_chart @chart_data0 %>
 <p>内定！</p>
 <%= area_chart @chart_data1, colors: ["pink", "#999"] %>
 <p>おちた</p>
 <%= area_chart @chart_data2 ,colors: ["black", "#000"]%>
+</div>
+</div>

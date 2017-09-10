@@ -1,6 +1,6 @@
+<div class="container">
 <h1>Users show</h1>
 
-<p>User</p>
 
 <%= link_to 'Users Index', users_path, :class=>'btn btn-info'%>
 <%= link_to 'User Edit', edit_user_path, :class=>'btn btn-success'%>
@@ -10,15 +10,15 @@
 <%= link_to 'Add Progress', new_progress_path(user_id: @user.id), :class=>'btn btn-warning'%>
 
 <%= link_to '統計ページ', graphs_path, :class=>'btn btn-primary'%>
-
-<ul>
-  <li>Name:  <%= @user.name %></li>
-  <li>Sex:   <%= @user.sex %></li>
-  <li>Age:   <%= @user.age %></li>
-  <li>Univ:  <%= @user.univ %></li>
-  <li>Grade: <%= @user.grade %></li>
+<h2>ユーザーデータ</h2>
+<ul class="user-data list-group">
+  <li class="list-group-item">Name:  <%= @user.name %></li>
+  <li class="list-group-item">Sex:   <%= @user.sex %></li>
+  <li class="list-group-item" class="list-group-item" class="list-group-item">Age:   <%= @user.age %></li>
+  <li class="list-group-item" class="list-group-item">Univ:  <%= @user.univ %></li>
+  <li class="list-group-item">Grade: <%= @user.grade %></li>
 </ul>
-
+<h2>選考進捗状況</h2>
 <table class="table table-striped table-bordered table-hover">
   <thead class="thead-default">
   <tr>
@@ -44,3 +44,4 @@
   <% end %>
   </tbody>
 </table>
+</div>
