@@ -19,6 +19,7 @@ class ProgressesController < ApplicationController
   # GET /progresses/new
   def new
     @progress = Progress.new
+    @progress.user_id = params[:user_id]
   end
 
   # GET /progresses/1/edit
