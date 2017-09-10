@@ -6,7 +6,7 @@
 <%= link_to 'User Edit', edit_user_path, :class=>'btn btn-success'%>
 <%= link_to 'User Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %>
 
-<%= link_to 'Add Progress', new_progress_path, :class=>'btn btn-warning'%>
+<%= link_to 'Add Progress', new_progress_path(user_id: @user.id), :class=>'btn btn-warning'%>
 
 <%= link_to '統計ページ', graphs_path, :class=>'btn btn-primary'%>
 
