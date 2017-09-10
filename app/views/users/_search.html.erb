@@ -1,0 +1,13 @@
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :age %>
+  <%= f.number_field :age_eq %>
+
+  <%= f.label :grade %>
+  <%= f.number_field :grade_eq %>
+
+  <%= f.submit %>
+<% end %>
