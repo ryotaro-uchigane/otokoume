@@ -3,4 +3,4 @@
 <%= render 'form', progress: @progress %>
 
 <%= link_to 'Show', @progress %> |
-<%= link_to 'Back', user_path %>
+<%= link_to 'Back', user_path(@progress.user_id) %>
