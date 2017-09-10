@@ -17,11 +17,12 @@
 </script>
 
 <h1>statistics</h1>
-<div class="container">
-<div class="graph_outer center_box">
-<div class="raw top_menu">
+<div class="raw top-menu">
 <%= link_to 'ユーザー一覧に戻る', users_path, :class=>'btn btn-primary btn-xs' %>
 </div>
+<div class="container">
+<div class="graph-outer center-block">
+
 <div class="form-inline">
   <select id="business" class="form-control">
     <option value="-1" selected>--業種を選択--</option>
@@ -34,7 +35,7 @@
   </select>
   <button type="submit" onClick="change_graph()" class="btn btn-success">絞り込む</button>
 </div>
-<div class="graph_box center_box">
+<div class="graph-box center-box">
 <h2>選考中の就活生数</h2>
 <%= area_chart @chart_data0 %>
 <h2>内定済の就活生数</h2>
