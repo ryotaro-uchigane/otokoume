@@ -15,8 +15,13 @@
     }
   }
 </script>
+
 <h1>statistics</h1>
-<%= link_to 'Users Index', users_path, :class=>'btn btn-primary btn-xs' %>
+<div class="container">
+<div class="graph_outer center_box">
+<div class="raw top_menu">
+<%= link_to 'ユーザー一覧に戻る', users_path, :class=>'btn btn-primary btn-xs' %>
+</div>
 <div class="form-inline">
   <select id="business" class="form-control">
     <option value="-1" selected>--業種を選択--</option>
@@ -27,12 +32,13 @@
     <option value="0">エンジニア</option>
     <option value="1">総合職</option>
   </select>
-  <button type="submit" onClick="change_graph()" class="btn btn-success">OK!</button>
+  <button type="submit" onClick="change_graph()" class="btn btn-success">絞り込む</button>
 </div>
-
-<p>選考中</p>
+<div class="graph_box center_box">
+<h2>選考中の就活生数</h2>
 <%= area_chart @chart_data0 %>
-<p>内定！</p>
+<h2>内定済の就活生数</h2>
 <%= area_chart @chart_data1 ,colors: ["pink", "#999"] %>
-<p>おちた</p>
+<h2>選考不合格の就活生数</h2>
 <%= area_chart @chart_data2 ,colors: ["black", "#000"] %>
+</div></div></div>
