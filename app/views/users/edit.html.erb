@@ -1,9 +1,14 @@
+<div class="container">
 <h1>Editing User</h1>
 
+<div class="raw">
+  <%= link_to 'User Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %>
+  <%= link_to 'Users Index', users_path, :class=>'btn btn-warning' %>
+  <%= link_to 'User', user_path, :class=>'btn btn-info' %>
+  <%= link_to '統計ページ', graphs_path, :class=>'btn btn-primary' %>
+</div>
+
+<div class="dataform center-block">
 <%= render partial: 'form' %>
-
-
-<%= link_to 'User Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %>
-<%= link_to 'Users Index', users_path, :class=>'btn btn-warning' %>
-<%= link_to 'User', user_path, :class=>'btn btn-info' %>
-<%= link_to '統計ページ', graphs_path, :class=>'btn btn-primary' %>
+</div>
+</div>
