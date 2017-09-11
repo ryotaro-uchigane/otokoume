@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911002819) do
+ActiveRecord::Schema.define(version: 20170911012246) do
 
   create_table "business_categories", force: :cascade do |t|
     t.string "name"
@@ -28,8 +28,7 @@ ActiveRecord::Schema.define(version: 20170911002819) do
   create_table "progresses", force: :cascade do |t|
     t.integer "user_id"
     t.string "company_name"
-    t.integer "business_category"
-    t.integer "occupation_category"
+    t.integer "occupation_category_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
