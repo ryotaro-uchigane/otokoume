@@ -1,8 +1,12 @@
-<h1>選考進捗状況追加</h1>
-
-<%= render 'form', progress: @progress %>
-<% if @progress.user_id.blank? %>
-<%= link_to 'ユーザー一覧に戻る', users_path %>
+<div class="container">
+  <h1>選考進捗状況追加</h1>
+  <% if @progress.user_id.blank? %>
+  <%= button_to 'ユーザー一覧に戻る', users_path, method:"get", class: "btn btn-primary" %>
 <% else %>
-<%= link_to 'ユーザー詳細に戻る', user_path(@progress.user_id) %>
-<% end %>
+  <%= button_to 'ユーザー詳細に戻る', user_path(@progress.user_id), method:"get", class: "btn btn-secondary" %>
+  <% end %>
+  <div class='dataform center-block panel'>
+    <%= render 'form', progress: @progress %>
+  </div>
+
+</div>
