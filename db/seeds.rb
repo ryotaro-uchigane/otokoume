@@ -42,3 +42,17 @@ end
       date: Faker::Date.between(6.month.ago, Date.today),
   )
 end
+
+10.times do
+  job = Faker::Job
+  business_category = BusinessCategory.create(
+      name: job.unique.field,
+  )
+  5.times do
+    OccupationCategory.create(
+        business_category_id: business_category.id,
+        name: job.unique.title
+    )
+  end
+end
+
