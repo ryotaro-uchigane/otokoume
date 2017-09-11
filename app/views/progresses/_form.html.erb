@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザーID %>
     <%= form.number_field :user_id, id: :progress_user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :company_name %>
+    <%= form.label :会社 %>
     <%= form.text_field :company_name, id: :progress_company_name %>
   </div>
 
   <div class="field">
-    <%= form.label :business_category %>
+    <%= form.label :業種 %>
     <%= form.select :business_category, Progress.business_categories.keys.to_a, {} %>
   </div>
 
   <div class="field">
-    <%= form.label :occupation_category %>
+    <%= form.label :職種 %>
     <%= form.select :occupation_category, Progress.occupation_categories.keys.to_a, {} %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
+    <%= form.label :選考状況 %>
     <%= form.select :status, Progress.statuses.keys.to_a, {} %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '登録' %>
   </div>
 <% end %>

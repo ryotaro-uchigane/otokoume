@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
+<h2>選考状況詳細</h2>
 <div class="top-menu raw">
 <%= link_to 'ユーザーページに戻る', user_path(@progress.user_id), :class=>'btn btn-primary'%>
 </div>
-<h2>選考状況</h2>
 <ul class="company-data list-group">
-  <li class="list-group-item">User:  <%= @progress.user_id %></li>
-  <li class="list-group-item">Company Name:   <%= @progress.company_name %></li>
-  <li class="list-group-item">Business Category:   <%= @progress.business_category %></li>
-  <li class="list-group-item">Occupational Category:  <%= @progress.occupation_category %></li>
-  <li class="list-group-item">Status: <%= @progress.status %></li>
+  <li class="list-group-item">ユーザー: <%= @progress.user_id %></li>
+  <li class="list-group-item">会社:    <%= @progress.company_name %></li>
+  <li class="list-group-item">業種:    <%= @progress.business_category %></li>
+  <li class="list-group-item">職種:    <%= @progress.occupation_category %></li>
+  <li class="list-group-item">選考状況: <%= @progress.status %></li>
 </ul>
 <h2><%= @progress.company_name %>の選考状況<h2>
 <div class="graph-outer center-block panel">
