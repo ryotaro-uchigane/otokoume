@@ -44,14 +44,15 @@ end
 end
 
 10.times do
-  BusinessCategory.create(
-      name: Faker::Job.unique.field,
+  job = Faker::Job
+  business_category = BusinessCategory.create(
+      name: job.unique.field,
   )
+  5.times do
+    OccupationCategory.create(
+        business_category_id: business_category.id,
+        name: job.unique.title
+    )
+  end
 end
 
-300.times do
-  OccupationCategory.create(
-      business_category_id: BusinessCategory.where( 'id >= ?', rand(BusinessCategory.first.id..BusinessCategory.last.id) ).first.id,
-      name: Faker::Job.unique.title
-  )
-end
