@@ -1,4 +1,4 @@
-<%= form_with(model: progress, local: true) do |form| %>
+<%= form_with(model: progress, local: true, class: "form-group") do |form| %>
   <% if progress.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(progress.errors.count, "error") %> prohibited this progress from being saved:</h2>
@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :ユーザーID %>
-    <%= form.number_field :user_id, id: :progress_user_id %>
+    <%= form.number_field :user_id, id: :progress_user_id, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :会社 %>
-    <%= form.text_field :company_name, id: :progress_company_name %>
+    <%= form.text_field :company_name, id: :progress_company_name, class:"form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :業種 %>
-    <%= form.select :business_category, Progress.business_categories.keys.to_a, {} %>
+    <%= form.select :business_category, Progress.business_categories.keys.to_a, {}, class:"form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :職種 %>
-    <%= form.select :occupation_category, Progress.occupation_categories.keys.to_a, {} %>
+    <%= form.select :occupation_category, Progress.occupation_categories.keys.to_a, {}, class:"form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :選考状況 %>
-    <%= form.select :status, Progress.statuses.keys.to_a, {} %>
+    <%= form.select :status, Progress.statuses.keys.to_a, {} , class:"form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit '登録' %>
+  <div class="actions form-group">
+    <%= form.submit '登録', class:"form-control"  %>
   </div>
 <% end %>
