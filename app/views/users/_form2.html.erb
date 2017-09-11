@@ -1,21 +1,20 @@
 <%= bootstrap_form_for(@user, url:users_path) do |f| %>
-    <div class="field">
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.select :sex, User.sexes.keys.to_a, {} %>
-
-    </div>
-    <div class="field">
-      <%= f.number_field :age %>
-    </div>
-    <div class="field">
-      <%= f.select :univ, User.univs.keys.to_a, {} %>
-    </div>
-    <div class="field">
-      <%= f.number_field :grade %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.select :sex, User.sexes.keys.to_a, {} %>
+  </div>
+  <div class="field">
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.select :univ, User.univs.keys.to_a, {} %>
+  </div>
+  <div class="field">
+    <%= f.number_field :grade %>
+  </div>
+  <div class="actions">
+    <%= f.submit '登録' %>
+  </div>
 <% end%>

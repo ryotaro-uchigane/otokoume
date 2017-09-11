@@ -1,13 +1,13 @@
 <%= search_form_for @q do |f| %>
 
-  <%= f.label :name %>
+  <%= f.label :名前 %>
   <%= f.search_field :name_cont %>
 
-  <%= f.label :age %>
+  <%= f.label :年齢 %>
   <%= f.number_field :age_eq %>
 
-  <%= f.label :grade %>
+  <%= f.label :学年 %>
   <%= f.number_field :grade_eq %>
 
-  <%= f.submit %>
+  <%= f.submit '検索' %>
 <% end %>
