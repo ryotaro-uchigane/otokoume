@@ -29,20 +29,6 @@ Faker::Config.locale = :ja
   )
 end
 
-
-2000.times do
-  Progress.create(
-      # name: Forgery(:name).full_name,
-      user_id: Faker::Number.between(0, User.count),
-      company_name: company_names.sample(),
-      business_category: 0,
-      occupation_category: [0,1].sample,
-      status: Faker::Number.between(0, 2),
-      body: Faker::Lorem.sentence,
-      date: Faker::Date.between(6.month.ago, Date.today),
-  )
-end
-
 10.times do
   job = Faker::Job
   business_category = BusinessCategory.create(
@@ -56,3 +42,14 @@ end
   end
 end
 
+2000.times do
+  Progress.create(
+      # name: Forgery(:name).full_name,
+      user_id: Faker::Number.between(0, User.count),
+      company_name: company_names.sample(),
+      occupation_category_id: OccupationCategory.where( 'id >= ?', rand(OccupationCategory.first.id..OccupationCategory.last.id) ).first.id,
+      status: Faker::Number.between(0, 2),
+      body: Faker::Lorem.sentence,
+      date: Faker::Date.between(6.month.ago, Date.today),
+  )
+end

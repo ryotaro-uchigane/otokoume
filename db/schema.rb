@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170911012246) do
   create_table "progresses", force: :cascade do |t|
     t.integer "user_id"
     t.string "company_name"
-    t.integer "ocuupation_category_id"
+    t.integer "occupation_category_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
