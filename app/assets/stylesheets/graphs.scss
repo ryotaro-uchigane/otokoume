@@ -1,7 +1,12 @@
 // Place all the styles related to the graphs controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body{
+  background-image: image-url("otokoume_illust.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .graph-outer {
   background-color: #eee;
   padding:10px 10px 50px;
